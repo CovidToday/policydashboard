@@ -65,7 +65,8 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["pct_ICU"][allData[city]["pct_ICU"].length -1],     //input from json "icuvacancy"
                 //delta: { reference: 200 }, //removed as not using delta
-                domain: { x: [0.5, 1.5], y: [0.05, 0.15] },
+                number: { suffix: "%", font: {size: 30}},
+                domain: { x: [0.5, 1], y: [0.05, 0.15] },
                 title: { text: "ICU Vacancy (%)  " },
                 gauge: {
                   shape: "bullet",
@@ -88,7 +89,8 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["daily_tests_per_million_14ma"][allData[city]["daily_tests_per_million_14ma"].length -1],     //input from json "dailytestpermillion"
                 //delta: { reference: 200 }, //removed as not using delta
-                domain: { x: [0.5, 1.5], y: [0.22, 0.32] },
+                number: { font: {size: 30}},
+                domain: { x: [0.5, 1], y: [0.22, 0.32] },
                 title: { text: "Tests Per Million  " },
                 gauge: {
                   shape: "bullet",
@@ -110,7 +112,8 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["TPR"][allData[city]["TPR"].length -1],     //input from json "dailytestpositivityrate"
                 //delta: { reference: 200 }, //removed as not using delta
-                domain: { x: [0.5, 1.5], y: [0.39, 0.49] },
+                number: { suffix: "%", font: {size: 30}},
+                domain: { x: [0.5, 1], y: [0.39, 0.49] },
                 title: { text: "Tests Positivity (%)  " },
                 gauge: {
                   shape: "bullet",
@@ -133,7 +136,8 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["rate_increase_new_cases"][allData[city]["rate_increase_new_cases"].length -1] ,     //input from json "casegrowthrate"
                 //delta: { reference: 200 }, //removed as not using delta
-                domain: { x: [0.5, 1.5], y: [0.56, 0.66] },
+                number: { suffix: "%", font: {size: 30}},
+                domain: { x: [0.5, 1], y: [0.56, 0.66] },
                 title: { text: "Case Growth Rate (%)  " },
                 gauge: {
                   shape: "bullet",
@@ -156,7 +160,8 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["daily_cases_per_million"][allData[city]["daily_cases_per_million"].length -1],     //input from json "dailycasespermillion"
                 //delta: { reference: 200 }, //removed as not using delta
-                domain: { x: [0.5, 1.5], y: [0.73, 0.83] },
+                number: { font: {size: 30}},
+                domain: { x: [0.5, 1], y: [0.73, 0.83] },
                 title: { text: "Cases Per Million  " },
                 gauge: {
                   shape: "bullet",
@@ -177,7 +182,7 @@ export default class App extends Component {
               }
             ];
             const plotsLayout = {
-              width: 800, height: 500,
+              width: 600, height: 500,
               margin: { t: 10, r: 25, l: 25, b: 10 }
             };
 
