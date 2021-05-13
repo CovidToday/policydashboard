@@ -390,7 +390,7 @@ export default class App extends Component {
                   </Dropdown.Menu>
                 </Dropdown>
                 </div>
-                <div className="date d-none d-lg-block">Data shown for {this.state.dateUpdated}</div>
+                <div className="date d-none d-lg-block">on {this.state.dateUpdated} 2021</div>
                 <div className="first">
                     <div className="row">
                         <div className="col-md-6 d-none d-lg-block">
@@ -420,108 +420,18 @@ export default class App extends Component {
                                           layout={this.state.heatMapLayout}
                                           config={this.state.heatMapConfig} />
                                 </div>
-                                <div className="d-none d-lg-block last-changed-text">Last 90 days status</div>
+                                <div className="d-none d-lg-block last-changed-text">Status of last 90 days</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className = "second">
-                    <h2 className = "display-4 text-center">Suggested Actions</h2><br/>
+                    <h2 className = "display-4 text-center">Suggested Policy Actions</h2><br/>
                         <div className = "row">
                             <div className = "col-md-4">
                                 <div className = "action card">
-                                    <div className = "card-header" >
-                                        <p className = "lead">Medical Preparedness</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {medicalPreparednessText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Mobility</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {mobilityText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Testing</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {testingText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Closures</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {closuresText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Contact Tracking</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {contactTracingText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Communication</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {communicationText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Data</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {dataText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Public Leadership</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {publicLeadershipText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Vaccinations</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {vaccinationsText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Gathering</p>
+                                    <div className = "card-header" style={{backgroundColor: "#d8e2dc"}}>
+                                        <p className = "lead">Gatherings</p>
                                     </div>
                                     <div className = "card-body">
                                         {gatheringsText}
@@ -531,7 +441,97 @@ export default class App extends Component {
                             <div className = "col-md-4">
                                 <div className = "action card">
                                     <div className = "card-header" style={{backgroundColor: "#d8e2dc"}}>
-                                        <p className = "lead">Mask wearing and ventilation</p>
+                                        <p className = "lead">Closures</p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {closuresText}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#d8e2dc"}}>
+                                        <p className = "lead">Travel</p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {mobilityText}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#fcd5ce"}}>
+                                        <p className = "lead">Medical Preparedness</p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {medicalPreparednessText}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#fcd5ce"}}>
+                                        <p className = "lead">Testing</p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {testingText}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#fcd5ce"}}>
+                                        <p className = "lead">Vaccination</p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {vaccinationsText}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#fcd5ce"}}>
+                                        <p className = "lead">Contact Tracing</p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {contactTracingText}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
+                                        <p className = "lead">Communication </p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {communicationText}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
+                                        <p className = "lead">Data</p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {dataText}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
+                                        <p className = "lead">Public Leadership</p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {publicLeadershipText}
+                                    </div>
+                                </div>  
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
+                                        <p className = "lead">Mask Wearing and Ventilation</p>
                                     </div>
                                     <div className = "card-body">
                                         {maskVentilationText}
@@ -540,8 +540,8 @@ export default class App extends Component {
                             </div>
                             <div className = "col-md-4">
                                 <div className = "action card">
-                                    <div className = "card-header">
-                                        <p className = "lead">Physical Distancing and Hygine</p>
+                                    <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
+                                        <p className = "lead">Physical Distancing and Hygiene</p>
                                     </div>
                                     <div className = "card-body">
                                         {distancingText}
