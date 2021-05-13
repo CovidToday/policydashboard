@@ -229,8 +229,12 @@ export default class App extends Component {
             const index = changeArrReverse.findIndex((i) =>
                 i !== lastChangedValue
             )
-            const dateArrReverse = heatMapData[city]["dates"].reverse();
+            changeArr.reverse();
+            const dateArr = heatMapData[city]["dates"];
+            const dateArrReverse = dateArr.reverse();
             const changeDate = dateArrReverse[index];
+            dateArr.reverse();
+
 
 
             this.setState({plotsData: plotData, plotLayout: plotsLayout,
