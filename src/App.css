@@ -83,7 +83,7 @@
 }
 
 .risk-card{
-    width: 550px;
+    width: 450px;
     height: 200px;
     margin-left: 25px;
 }
@@ -99,7 +99,7 @@
 
 .last-changed-date {
     text-align: center;
-    width: 600px;
+    width: 500px;
     padding: 10px;
 }
 

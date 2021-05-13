@@ -213,7 +213,7 @@ export default class App extends Component {
               }
             ];
             const heatmapLayout = {
-              width: 600, height: 100,
+              width: 500, height: 100,
               margin: { t: 10, r: 25, l: 25, b: 10 }
             };
             const config = {responsive: true}
