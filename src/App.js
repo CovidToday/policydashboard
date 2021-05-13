@@ -420,6 +420,7 @@ export default class App extends Component {
                                           layout={this.state.heatMapLayout}
                                           config={this.state.heatMapConfig} />
                                 </div>
+                                <div className="d-none d-lg-block last-changed-text">Last 90 days status</div>
                             </div>
                         </div>
                     </div>
@@ -529,7 +530,7 @@ export default class App extends Component {
                             </div>
                             <div className = "col-md-4">
                                 <div className = "action card">
-                                    <div className = "card-header" style={{backgroundColor: "d8e2dc"}}>
+                                    <div className = "card-header" style={{backgroundColor: "#d8e2dc"}}>
                                         <p className = "lead">Mask wearing and ventilation</p>
                                     </div>
                                     <div className = "card-body">

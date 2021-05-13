@@ -89,7 +89,8 @@
 }
 
 .risk {
- background-color: #eaeaec
+ background-color: #eaeaec;
+ height: 146px;
 }
 
 .risk-text {
@@ -101,8 +102,16 @@
     text-align: center;
     width: 500px;
     padding: 10px;
+    padding-bottom: 90px
 }
 
 .card-body {
     white-space: pre-wrap;
+}
+
+.last-changed-text {
+    text-align: center;
+        width: 500px;
+        padding: 5px;
+            font-size: 13px;
 }
