@@ -66,7 +66,7 @@ export default class App extends Component {
                 value: allData[city]["pct_ICU"][allData[city]["pct_ICU"].length -1],     //input from json "icuvacancy"
                 //delta: { reference: 200 }, //removed as not using delta
                 domain: { x: [0.5, 1.5], y: [0.05, 0.15] },
-                title: { text: "ICU Vacancy (%)" },
+                title: { text: "ICU Vacancy (%)  " },
                 gauge: {
                   shape: "bullet",
                   axis: { range: [null, 100] },
@@ -89,10 +89,10 @@ export default class App extends Component {
                 value: allData[city]["daily_tests_per_million_14ma"][allData[city]["daily_tests_per_million_14ma"].length -1],     //input from json "dailytestpermillion"
                 //delta: { reference: 200 }, //removed as not using delta
                 domain: { x: [0.5, 1.5], y: [0.22, 0.32] },
-                title: { text: "Tests Per Million" },
+                title: { text: "Tests Per Million  " },
                 gauge: {
                   shape: "bullet",
-                  axis: { range: [null, 1000] },
+                  axis: { range: [null, 5000] },
                   threshold: {
                     line: { color: "3d3d5c", width: 2 },
                     thickness: 0.75,
@@ -100,7 +100,7 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [0,140], color: "ff4d4d" },
-                    { range: [140, 1000], color: "238823" }
+                    { range: [140, 5000], color: "238823" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -111,7 +111,7 @@ export default class App extends Component {
                 value: allData[city]["TPR"][allData[city]["TPR"].length -1],     //input from json "dailytestpositivityrate"
                 //delta: { reference: 200 }, //removed as not using delta
                 domain: { x: [0.5, 1.5], y: [0.39, 0.49] },
-                title: { text: "Tests Positivity (%)" },
+                title: { text: "Tests Positivity (%)  " },
                 gauge: {
                   shape: "bullet",
                   axis: { range: [null, 100] },
@@ -134,17 +134,17 @@ export default class App extends Component {
                 value: allData[city]["rate_increase_new_cases"][allData[city]["rate_increase_new_cases"].length -1] ,     //input from json "casegrowthrate"
                 //delta: { reference: 200 }, //removed as not using delta
                 domain: { x: [0.5, 1.5], y: [0.56, 0.66] },
-                title: { text: "Case Growth Rate (%)" },
+                title: { text: "Case Growth Rate (%)  " },
                 gauge: {
                   shape: "bullet",
-                  axis: { range: [null, 100] },
+                  axis: { range: [-50, 100] },
                   threshold: {
                     line: { color: "3d3d5c", width: 2 },
                     thickness: 0.75,
                     value: allData[city]["rate_increase_new_cases"][allData[city]["rate_increase_new_cases"].length -14] //input from json "casegrowthrate" from -14 days
                   },
                   steps: [
-                    { range: [0, 2], color: "238823" },
+                    { range: [-50, 2], color: "238823" },
                     { range: [2, 5], color: "FFBF00" },
                     { range: [5, 100], color: "ff4d4d" }
                   ],
@@ -157,11 +157,11 @@ export default class App extends Component {
                 value: allData[city]["daily_cases_per_million"][allData[city]["daily_cases_per_million"].length -1],     //input from json "dailycasespermillion"
                 //delta: { reference: 200 }, //removed as not using delta
                 domain: { x: [0.5, 1.5], y: [0.73, 0.83] },
-                title: { text: "Cases Per Million" },
+                title: { text: "Cases Per Million  " },
                 gauge: {
                   shape: "bullet",
                   axis: {
-                    range: [null, 1000]      },
+                    range: [null, 2000]      },
                   threshold: {
                     line: { color: "3d3d5c", width: 2 },
                     thickness: 0.75,
@@ -170,7 +170,7 @@ export default class App extends Component {
                   steps: [
                     { range: [0, 20], color: "238823" },
                     { range: [20, 100], color: "FFBF00" },
-                    { range: [100, 1000], color: "ff4d4d" }
+                    { range: [100, 2000], color: "ff4d4d" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -213,8 +213,8 @@ export default class App extends Component {
               }
             ];
             const heatmapLayout = {
-              width: 500, height: 100,
-              margin: { t: 10, r: 25, l: 25, b: 10 }
+              width: 500, height: 50,
+              margin: { t: 50, r: 25, l: 25, b: 10 }
             };
             const config = {responsive: true}
 
