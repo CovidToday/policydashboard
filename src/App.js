@@ -65,9 +65,9 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["pct_ICU"][allData[city]["pct_ICU"].length -1],     //input from json "icuvacancy"
                 //delta: { reference: 200 }, //removed as not using delta
-                number: { suffix: "%", font: {size: 30}},
+                number: { suffix: "%", font: {size: 20}},
                 domain: { x: [0.5, 1], y: [0.05, 0.15] },
-                title: { text: "ICU Vacancy (%)  " },
+                title: { text: "ICU Vacancy (%)  ", font: {size: 20} },
                 gauge: {
                   shape: "bullet",
                   axis: { range: [null, 100] },
@@ -89,9 +89,9 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["daily_tests_per_million_14ma"][allData[city]["daily_tests_per_million_14ma"].length -1],     //input from json "dailytestpermillion"
                 //delta: { reference: 200 }, //removed as not using delta
-                number: { font: {size: 30}},
+                number: { font: {size: 20}},
                 domain: { x: [0.5, 1], y: [0.22, 0.32] },
-                title: { text: "Tests Per Million  " },
+                title: { text: "Tests Per Million  ", font: {size: 20} },
                 gauge: {
                   shape: "bullet",
                   axis: { range: [null, 5000] },
@@ -112,9 +112,9 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["TPR"][allData[city]["TPR"].length -1],     //input from json "dailytestpositivityrate"
                 //delta: { reference: 200 }, //removed as not using delta
-                number: { suffix: "%", font: {size: 30}},
+                number: { suffix: "%", font: {size: 20}},
                 domain: { x: [0.5, 1], y: [0.39, 0.49] },
-                title: { text: "Tests Positivity (%)  " },
+                title: { text: "Tests Positivity (%)  ", font: {size: 20} },
                 gauge: {
                   shape: "bullet",
                   axis: { range: [null, 100] },
@@ -136,9 +136,9 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["rate_increase_new_cases"][allData[city]["rate_increase_new_cases"].length -1] ,     //input from json "casegrowthrate"
                 //delta: { reference: 200 }, //removed as not using delta
-                number: { suffix: "%", font: {size: 30}},
+                number: { suffix: "%", font: {size: 20}},
                 domain: { x: [0.5, 1], y: [0.56, 0.66] },
-                title: { text: "Case Growth Rate (%)  " },
+                title: { text: "Case Growth Rate (%)  ", font: {size: 20} },
                 gauge: {
                   shape: "bullet",
                   axis: { range: [-50, 100] },
@@ -160,9 +160,9 @@ export default class App extends Component {
                 mode: "number+gauge",
                 value: allData[city]["daily_cases_per_million"][allData[city]["daily_cases_per_million"].length -1],     //input from json "dailycasespermillion"
                 //delta: { reference: 200 }, //removed as not using delta
-                number: { font: {size: 30}},
+                number: { font: {size: 20}},
                 domain: { x: [0.5, 1], y: [0.73, 0.83] },
-                title: { text: "Cases Per Million  " },
+                title: { text: "Cases Per Million  ", font: {size: 20} },
                 gauge: {
                   shape: "bullet",
                   axis: {
@@ -182,7 +182,7 @@ export default class App extends Component {
               }
             ];
             const plotsLayout = {
-              width: 600, height: 500,
+              width: 750, height: 500,
               margin: { t: 10, r: 25, l: 25, b: 10 }
             };
 
@@ -409,7 +409,7 @@ export default class App extends Component {
                                         this.state.categoryToday === "YELLOW" ? "MEDIUM RISK" : "INSUFFICIENT DATA TO CATEGORIZE"}</span>
                                     </div>
                                 </div>
-                                <div className="d-none d-lg-block last-changed-date">Status last changed on {this.state.lastChangeDate}</div>
+                                <div className="d-none d-lg-block last-changed-date">Risk score last changed on {this.state.lastChangeDate}</div>
                                 <div id = "status">
                                     <Plot data={this.state.heatMapData}
                                           layout={this.state.heatMapLayout}
@@ -424,7 +424,7 @@ export default class App extends Component {
                         <div className = "row">
                             <div className = "col-md-4">
                                 <div className = "action card">
-                                    <div className = "card-header">
+                                    <div className = "card-header" >
                                         <p className = "lead">Medical Preparedness</p>
                                     </div>
                                     <div className = "card-body">
