@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/policydashboard/static/css/main.5810d5a2.chunk.css",
-    "main.js": "/policydashboard/static/js/main.7556dbd9.chunk.js",
-    "main.js.map": "/policydashboard/static/js/main.7556dbd9.chunk.js.map",
-    "runtime-main.js": "/policydashboard/static/js/runtime-main.a12d3a50.js",
-    "runtime-main.js.map": "/policydashboard/static/js/runtime-main.a12d3a50.js.map",
+    "main.css": "/policydashboard/static/css/main.9a64a07f.chunk.css",
+    "main.js": "/policydashboard/static/js/main.40c3249f.chunk.js",
+    "main.js.map": "/policydashboard/static/js/main.40c3249f.chunk.js.map",
+    "runtime-main.js": "/policydashboard/static/js/runtime-main.ad50d6e6.js",
+    "runtime-main.js.map": "/policydashboard/static/js/runtime-main.ad50d6e6.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/policydashboard/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.6aa208f1.chunk.js": "/policydashboard/static/js/2.6aa208f1.chunk.js",
-    "static/js/2.6aa208f1.chunk.js.map": "/policydashboard/static/js/2.6aa208f1.chunk.js.map",
-    "static/js/3.3f71efea.chunk.js": "/policydashboard/static/js/3.3f71efea.chunk.js",
-    "static/js/3.3f71efea.chunk.js.map": "/policydashboard/static/js/3.3f71efea.chunk.js.map",
+    "static/js/2.0fa12f70.chunk.js": "/policydashboard/static/js/2.0fa12f70.chunk.js",
+    "static/js/2.0fa12f70.chunk.js.map": "/policydashboard/static/js/2.0fa12f70.chunk.js.map",
+    "static/js/3.418f901d.chunk.js": "/policydashboard/static/js/3.418f901d.chunk.js",
+    "static/js/3.418f901d.chunk.js.map": "/policydashboard/static/js/3.418f901d.chunk.js.map",
     "index.html": "/policydashboard/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/policydashboard/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.5810d5a2.chunk.css.map": "/policydashboard/static/css/main.5810d5a2.chunk.css.map",
-    "static/js/2.6aa208f1.chunk.js.LICENSE.txt": "/policydashboard/static/js/2.6aa208f1.chunk.js.LICENSE.txt",
+    "static/css/main.9a64a07f.chunk.css.map": "/policydashboard/static/css/main.9a64a07f.chunk.css.map",
+    "static/js/2.0fa12f70.chunk.js.LICENSE.txt": "/policydashboard/static/js/2.0fa12f70.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/policydashboard/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.a12d3a50.js",
+    "static/js/runtime-main.ad50d6e6.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.6aa208f1.chunk.js",
-    "static/css/main.5810d5a2.chunk.css",
-    "static/js/main.7556dbd9.chunk.js"
+    "static/js/2.0fa12f70.chunk.js",
+    "static/css/main.9a64a07f.chunk.css",
+    "static/js/main.40c3249f.chunk.js"
   ]
 }
