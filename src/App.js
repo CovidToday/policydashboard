@@ -6,7 +6,7 @@ import readXlsxFile from 'read-excel-file';
 import Tabletop from 'tabletop';
 import axios from 'axios';
 import Plot from "react-plotly.js";
-import {Dropdown} from 'react-bootstrap';
+import {Dropdown, Button} from 'react-bootstrap';
 
 export default class App extends Component {
     constructor(props) {
@@ -15,6 +15,8 @@ export default class App extends Component {
             cardsData: [],
             dataFromJson: {},
             heatmapFromJson: {},
+            dataFromJson2: {},
+            heatmapFromJson2: {},
             plotsData: [],
             plotLayout: [],
             heatMapData: [],
@@ -23,7 +25,8 @@ export default class App extends Component {
             categoryToday: "",
             city: "",
             dateUpdated: "",
-            lastChangeDate: ""
+            lastChangeDate: "",
+            selectedType: "aggressive"
         }
     }
 
@@ -45,19 +48,29 @@ export default class App extends Component {
         	    this.setState({ dataFromJson: response.data });
         	});
         await axios.get('https://raw.githubusercontent.com/aberrantdoc/policydashboard/master/district_data/demo.json')
-                    .then(response => {
-                	    this.setState({ heatmapFromJson: response.data });
-                	});
+            .then(response => {
+                this.setState({ heatmapFromJson: response.data });
+            });
+        await axios.get('https://raw.githubusercontent.com/aberrantdoc/policydashboard/master/district_data/agg_actual.json')
+            .then(response => {
+                this.setState({ dataFromJson2: response.data });
+            });
+        await axios.get('https://raw.githubusercontent.com/aberrantdoc/policydashboard/master/district_data/agg_demo.json')
+           .then(response => {
+               this.setState({ heatmapFromJson2: response.data });
+           });
         let allCities = [];
-        allCities = this.state.dataFromJson && Object.keys(this.state.dataFromJson);
+        const conservative = this.state.dataFromJson && Object.keys(this.state.dataFromJson);
+        const aggressive = this.state.dataFromJson2 && Object.keys(this.state.dataFromJson2);
+        allCities = this.state.selectedType === "conservative" ? conservative : aggressive;
         allCities.pop();
         this.setState({city: allCities[0]});
         this.setData(allCities[0]);
     }
 
     setData(city) {
-        const allData = this.state.dataFromJson;
-        const heatMapData = this.state.heatmapFromJson;
+        const allData = this.state.selectedType === "conservative" ? this.state.dataFromJson : this.state.dataFromJson2;
+        const heatMapData = this.state.selectedType === "conservative" ? this.state.heatmapFromJson : this.state.heatmapFromJson2;
         if(allData) {
             const plotData = [
               {
@@ -258,6 +271,10 @@ export default class App extends Component {
         this.setData(key);
     }
 
+    switchApproach() {
+        this.setState({selectedType: this.state.selectedType === "conservative" ? "aggressive" : "conservative"}, () => {this.setData(this.state.city)});
+    }
+
     render() {
         const policies = this.state.cardsData;
         let selectedCategory = this.state.categoryToday && this.state.categoryToday.toLowerCase().charAt(0).toUpperCase() + this.state.categoryToday.toLowerCase().slice(1);
@@ -391,6 +408,11 @@ export default class App extends Component {
                 </Dropdown>
                 </div>
                 <div className="date d-none d-lg-block">on {this.state.dateUpdated} 2021</div>
+                <div className="switch">
+                    <Button variant="secondary" onClick={() => this.switchApproach()}>{
+                        this.state.selectedType === "aggressive" ? "Switch to conservative" : "Switch to aggressive"
+                    }</Button>
+                </div>
                 <div className="first">
                     <div className="row">
                         <div className="col-md-6 d-none d-lg-block">
