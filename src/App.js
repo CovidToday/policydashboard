@@ -402,83 +402,51 @@ export default class App extends Component {
                     {this.state.city}
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
-                    <Dropdown.Item onSelect={() => this.selectCity("Delhi")}>Delhi</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Chandigarh")}>Chandigarh</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Anantapur")}>Anantapur</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Chittoor")}>Chittoor</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("East Godavari")}>Godavari</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Guntur")}>Guntur</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Kurnool")}>Kurnool</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Prakasam")}>Prakasam</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Srikakulam")}>Srikakulam</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Visakhapatnam")}>Visakhapatnam</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Vizianagaram")}>Vizianagaram</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("West Godavari")}>Godavari</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("S.P.S. Nellore")}>Nellore</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Y.S.R. Kadapa")}>Kadapa</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Begusarai")}>Begusarai</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Patna")}>Patna</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Raipur")}>Raipur</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Ahmedabad")}>Ahmedabad</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Rajkot")}>Rajkot</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Surat")}>Surat</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Vadodara")}>Vadodara</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Faridabad")}>Faridabad</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Gurugram")}>Gurugram</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("East Singhbhum")}>Singhbhum</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Koderma")}>Koderma</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Ranchi")}>Ranchi</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Ramgarh")}>Ramgarh</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("West Singhbhum")}>Singhbhum</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Bengaluru Urban")}>Urban</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Ballari")}>Ballari</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Mysuru")}>Mysuru</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Belagavi")}>Belagavi</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Chitradurga")}>Chitradurga</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Tumakuru")}>Tumakuru</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Thiruvananthapuram")}>Thiruvananthapuram</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Aurangabad")}>Aurangabad</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Jalgaon")}>Jalgaon</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Kolhapur")}>Kolhapur</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Mumbai")}>Mumbai</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Nagpur")}>Nagpur</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Nashik")}>Nashik</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Palghar")}>Palghar</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Pune")}>Pune</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Raigad")}>Raigad</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Solapur")}>Solapur</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Thane")}>Thane</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Satara")}>Satara</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Sangli")}>Sangli</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Ahmednagar")}>Ahmednagar</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Nanded")}>Nanded</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Bhopal")}>Bhopal</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Indore")}>Indore</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Ganjam")}>Ganjam</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Khordha")}>Khordha</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Ludhiana")}>Ludhiana</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("S.A.S. Nagar")}>Nagar</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Jalandhar")}>Jalandhar</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Jaipur")}>Jaipur</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Chengalpattu")}>Chengalpattu</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Chennai")}>Chennai</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Kancheepuram")}>Kancheepuram</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Madurai")}>Madurai</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Thiruvallur")}>Thiruvallur</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Tiruvannamalai")}>Tiruvannamalai</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Vellore")}>Vellore</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Coimbatore")}>Coimbatore</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Aligarh")}>Aligarh</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Bareilly")}>Bareilly</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Gautam Buddha Nagar")}>Nagar</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Ghaziabad")}>Ghaziabad</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Kanpur Nagar")}>Nagar</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Lucknow")}>Lucknow</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Varanasi")}>Varanasi</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Prayagraj")}>Prayagraj</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("Kolkata")}>Kolkata</Dropdown.Item>
-                    <Dropdown.Item onSelect={() => this.selectCity("North 24 Parganas")}>Parganas</Dropdown.Item>
+                      <Dropdown.Menu>
+
+<Dropdown.Item onSelect={() => this.selectCity("East Godavari")}>East Godavari</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Kolhapur")}>Kolhapur</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Raipur")}>Raipur</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Srikakulam")}>Srikakulam</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Mysuru")}>Mysuru</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Varanasi")}>Varanasi</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Chittoor")}>Chittoor</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Tumakuru")}>Tumakuru</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Nagpur")}>Nagpur</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Nanded")}>Nanded</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Vellore")}>Vellore</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Sangli")}>Sangli</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Chitradurga")}>Chitradurga</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Ballari")}>Ballari</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Bareilly")}>Bareilly</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Nashik")}>Nashik</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Thane")}>Thane</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Visakhapatnam")}>Visakhapatnam</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Vadodara")}>Vadodara</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Rajkot")}>Rajkot</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Tiruvannamalai")}>Tiruvannamalai</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Aligarh")}>Aligarh</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Ghaziabad")}>Ghaziabad</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Vizianagaram")}>Vizianagaram</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Prakasam")}>Prakasam</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Lucknow")}>Lucknow</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Pune")}>Pune</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Jaipur")}>Jaipur</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Jalgaon")}>Jalgaon</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Ahmedabad")}>Ahmedabad</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Satara")}>Satara</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Belagavi")}>Belagavi</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Madurai")}>Madurai</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Guntur")}>Guntur</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Kancheepuram")}>Kancheepuram</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Solapur")}>Solapur</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Kurnool")}>Kurnool</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Surat")}>Surat</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Coimbatore")}>Coimbatore</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Palghar")}>Palghar</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("West Godavari")}>West Godavari</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Kanpur Nagar")}>Kanpur Nagar</Dropdown.Item>
+<Dropdown.Item onSelect={() => this.selectCity("Chennai")}>Chennai</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
                 </div>
