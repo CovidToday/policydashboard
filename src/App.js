@@ -222,10 +222,10 @@ export default class App extends Component {
             const colorscaleValue = [
               [0, 'rgb(255, 77, 77)'],
               [0.33, 'rgb(255, 77, 77)'],
-              [0.33, '#238823'],
-              [0.67, '#238823'],
+              [0.33, '#ffbf00'],
               [0.67, '#ffbf00'],
-              [1, '#ffbf00']
+              [0.67, '#f2705c'],
+              [1, '#f2705c']
             ];
             const mapData = [
               {
@@ -472,11 +472,11 @@ export default class App extends Component {
                                     </div>
                                     <div className="risk card-body" style={{backgroundColor:
                                         this.state.categoryToday === "RED" ? "rgb(255, 77, 77)" :
-                                        this.state.categoryToday === "GREEN" ? "#238823" :
-                                        this.state.categoryToday === "YELLOW" ? "#ffbf00" : "#eaeaec", fontWeight: "bold", textAlign: "center"}}>
+                                        this.state.categoryToday === "YELLOW" ? "#ffbf00" :
+                                        this.state.categoryToday === "ORANGE" ? "#f2705c" : "#eaeaec", fontWeight: "bold", textAlign: "center"}}>
                                         <span className="risk-text">{this.state.categoryToday === "RED" ? "HIGH RISK" :
-                                        this.state.categoryToday === "GREEN" ? "LOW RISK" :
-                                        this.state.categoryToday === "YELLOW" ? "MEDIUM RISK" : "INSUFFICIENT DATA TO CATEGORIZE"}</span>
+                                        this.state.categoryToday === "YELLOW" ? "LOW RISK" :
+                                        this.state.categoryToday === "ORANGE" ? "MEDIUM RISK" : "INSUFFICIENT DATA TO CATEGORIZE"}</span>
                                     </div>
                                 </div>
                                 <div className="d-none d-lg-block last-changed-date">Risk score last changed on {this.state.lastChangeDate}</div>
