@@ -93,8 +93,8 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [0, 40], color: "ff4d4d" },
-                    { range: [40, 80], color: "FFBF00" },
-                    { range: [80, 100], color: "238823" }
+                    { range: [40, 80], color: "f2705c" },
+                    { range: [80, 100], color: "FFBF00" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -118,7 +118,7 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [0,140], color: "ff4d4d" },
-                    { range: [140, 5000], color: "238823" }
+                    { range: [140, 5000], color: "FFBF00" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -142,8 +142,8 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [0, 5], color: "238823" },
-                    { range: [5, 10], color: "FFBF00" },
-                    { range: [10, 100], color: "ff4d4d" }
+                    { range: [5, 10], color: "f2705c" },
+                    { range: [10, 100], color: "FFBF00" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -167,8 +167,8 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [-50, 2], color: "238823" },
-                    { range: [2, 5], color: "FFBF00" },
-                    { range: [5, 100], color: "ff4d4d" }
+                    { range: [2, 5], color: "f2705c" },
+                    { range: [5, 100], color: "FFBF00" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -193,8 +193,8 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [0, 20], color: "238823" },
-                    { range: [20, 100], color: "FFBF00" },
-                    { range: [100, 2000], color: "ff4d4d" }
+                    { range: [20, 100], color: "f2705c" },
+                    { range: [100, 2000], color: "FFBF00" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -211,10 +211,10 @@ export default class App extends Component {
                 return item.replace("GRAY", 3);
             });
             heatMapArray = heatMapArray.map((item) => {
-                return item.replace("YELLOW", 2);
+                return item.replace("ORANGE", 2);
             });
             heatMapArray = heatMapArray.map((item) => {
-                return item.replace("GREEN", 1);
+                return item.replace("YELLOW", 1);
             });
             heatMapArray = heatMapArray.map((item) => {
                 return item.replace("RED", 0);
