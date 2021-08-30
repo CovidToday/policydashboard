@@ -92,7 +92,7 @@ export default class App extends Component {
                     value: allData[city]["pct_ICU"][allData[city]["pct_ICU"].length - 14]//30 //input from json "icuvacancy" from -14 days
                   },
                   steps: [
-                    { range: [0, 40], color: "ff4d4d" },
+                    { range: [0, 40], color: "fc0f03" },
                     { range: [40, 80], color: "f2705c" },
                     { range: [80, 100], color: "FFBF00" }
                   ],
@@ -117,7 +117,7 @@ export default class App extends Component {
                     value: allData[city]["daily_tests_per_million_14ma"][allData[city]["daily_tests_per_million_14ma"].length -14], //input from json "dailytestpermillion" from -14 days
                   },
                   steps: [
-                    { range: [0,140], color: "ff4d4d" },
+                    { range: [0,140], color: "fc0f03" },
                     { range: [140, 5000], color: "FFBF00" }
                   ],
                   bar: { color: "1f1f2e" }
@@ -141,9 +141,9 @@ export default class App extends Component {
                     value: allData[city]["TPR"][allData[city]["TPR"].length -14],  //input from json "dailytestpositivityrate" from -14 days
                   },
                   steps: [
-                    { range: [0, 5], color: "238823" },
+                    { range: [0, 5], color: "FFBF00" },
                     { range: [5, 10], color: "f2705c" },
-                    { range: [10, 100], color: "FFBF00" }
+                    { range: [10, 100], color: "fc0f03" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -166,9 +166,9 @@ export default class App extends Component {
                     value: allData[city]["rate_increase_new_cases"][allData[city]["rate_increase_new_cases"].length -14] //input from json "casegrowthrate" from -14 days
                   },
                   steps: [
-                    { range: [-50, 2], color: "238823" },
+                    { range: [-50, 2], color: "FFBF00" },
                     { range: [2, 5], color: "f2705c" },
-                    { range: [5, 100], color: "FFBF00" }
+                    { range: [5, 100], color: "fc0f03" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -192,9 +192,9 @@ export default class App extends Component {
                     value: allData[city]["daily_cases_per_million"][allData[city]["daily_cases_per_million"].length -14] //input from json "dailycasespermillion" from -14 days
                   },
                   steps: [
-                    { range: [0, 20], color: "238823" },
+                    { range: [0, 20], color: "FFBF00" },
                     { range: [20, 100], color: "f2705c" },
-                    { range: [100, 2000], color: "FFBF00" }
+                    { range: [100, 2000], color: "fc0f03" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
