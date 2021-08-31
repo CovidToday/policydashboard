@@ -31,18 +31,22 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        Tabletop.init({
-              key: '1-VF4_JFPZ5-mZGqdx0y0X_9CIc6WY-RMzeQjvxXNvZE',
-              callback: googleData => {
-                console.log('google sheet data --->', googleData)
-                this.setState({cardsData: googleData});
-              },
-              simpleSheet: true
-            })
+        //Tabletop.init({
+              //key: '1-VF4_JFPZ5-mZGqdx0y0X_9CIc6WY-RMzeQjvxXNvZE',
+              //callback: googleData => {
+                //console.log('google sheet data --->', googleData)
+                //this.setState({cardsData: googleData});
+              //},
+              //simpleSheet: true
+            //})
         this.getData();
     }
 
     async getData() {
+        //await axios.get('https://raw.githubusercontent.com/aberrantdoc/policydashboard/master/district_data/Cat_wise_policies.json')
+            //.then(response => {
+                //this.setState({ cardsData: response.data });
+            //});
         await axios.get('https://raw.githubusercontent.com/aberrantdoc/policydashboard/master/district_data/actual.json')
             .then(response => {
         	    this.setState({ dataFromJson: response.data });
@@ -93,7 +97,7 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [0, 40], color: "fc0f03" },
-                    { range: [40, 80], color: "f2705c" },
+                    { range: [40, 80], color: "e38109" },
                     { range: [80, 100], color: "FFBF00" }
                   ],
                   bar: { color: "1f1f2e" }
@@ -142,7 +146,7 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [0, 5], color: "FFBF00" },
-                    { range: [5, 10], color: "f2705c" },
+                    { range: [5, 10], color: "e38109" },
                     { range: [10, 100], color: "fc0f03" }
                   ],
                   bar: { color: "1f1f2e" }
@@ -167,7 +171,7 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [-50, 2], color: "FFBF00" },
-                    { range: [2, 5], color: "f2705c" },
+                    { range: [2, 5], color: "e38109" },
                     { range: [5, 100], color: "fc0f03" }
                   ],
                   bar: { color: "1f1f2e" }
@@ -193,7 +197,7 @@ export default class App extends Component {
                   },
                   steps: [
                     { range: [0, 20], color: "FFBF00" },
-                    { range: [20, 100], color: "f2705c" },
+                    { range: [20, 100], color: "e38109" },
                     { range: [100, 2000], color: "fc0f03" }
                   ],
                   bar: { color: "1f1f2e" }
@@ -222,8 +226,8 @@ export default class App extends Component {
             const colorscaleValue = [
               [0, 'rgb(255, 77, 77)'],
               [0.33, 'rgb(255, 77, 77)'],
-              [0.33, '#ffbf00'],
-              [0.67, '#ffbf00'],
+              [0.33, '#e38109'],
+              [0.67, '#e38109'],
               [0.67, '#f2705c'],
               [1, '#f2705c']
             ];
@@ -277,6 +281,7 @@ export default class App extends Component {
     }
 
     render() {
+        console.log(this.state.cardsData);
         const policies = this.state.cardsData;
         let selectedCategory = this.state.categoryToday && this.state.categoryToday.toLowerCase().charAt(0).toUpperCase() + this.state.categoryToday.toLowerCase().slice(1);
         const medicalPreparedness = policies.filter((p) => p.Domain === "Medical Preparedness");
