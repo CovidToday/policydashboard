@@ -577,7 +577,7 @@ export default class App extends Component {
                                     <div className = "card-header" style={{backgroundColor: "#d8e2dc"}}>
                                         <p className = "lead">Travel</p>
                                     </div>
-                                    <div className = "card-body">
+                                    <div className ="card-body">
                                         {mobilityText}
                                     </div>
                                 </div>
