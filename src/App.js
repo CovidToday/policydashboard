@@ -31,22 +31,10 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        //Tabletop.init({
-              //key: '1-VF4_JFPZ5-mZGqdx0y0X_9CIc6WY-RMzeQjvxXNvZE',
-              //callback: googleData => {
-                //console.log('google sheet data --->', googleData)
-                //this.setState({cardsData: googleData});
-              //},
-              //simpleSheet: true
-            //})
         this.getData();
     }
 
     async getData() {
-        //await axios.get('https://raw.githubusercontent.com/aberrantdoc/policydashboard/master/district_data/Cat_wise_policies.json')
-            //.then(response => {
-                //this.setState({ cardsData: response.data });
-            //});
         await axios.get('https://raw.githubusercontent.com/aberrantdoc/policydashboard/master/district_data/actual.json')
             .then(response => {
         	    this.setState({ dataFromJson: response.data });
@@ -70,10 +58,15 @@ export default class App extends Component {
         allCities.pop();
         this.setState({city: allCities[0]});
         this.setData(allCities[0]);
+        await axios.get('https://raw.githubusercontent.com/aberrantdoc/policydashboard/master/district_data/Cat_wise_policies.json')
+            .then(response => {
+                //console.log(response.data)
+                this.setState({ cardsData: response.data });
+            });
     }
 
     setData(city) {
-        console.log(this.state)
+        //console.log(this.state)
         const allData = this.state.selectedType === "conservative" ? this.state.dataFromJson : this.state.dataFromJson2;
         const heatMapData = this.state.selectedType === "conservative" ? this.state.heatmapFromJson : this.state.heatmapFromJson2;
         if(allData) {
@@ -96,9 +89,9 @@ export default class App extends Component {
                     value: allData[city]["pct_ICU"][allData[city]["pct_ICU"].length - 14]//30 //input from json "icuvacancy" from -14 days
                   },
                   steps: [
-                    { range: [0, 40], color: "fc0f03" },
-                    { range: [40, 80], color: "e38109" },
-                    { range: [80, 100], color: "FFBF00" }
+                    { range: [0, 40], color: "b01313" },
+                    { range: [40, 80], color: "fa9325" },
+                    { range: [80, 100], color: "fafa25" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -121,8 +114,8 @@ export default class App extends Component {
                     value: allData[city]["daily_tests_per_million_14ma"][allData[city]["daily_tests_per_million_14ma"].length -14], //input from json "dailytestpermillion" from -14 days
                   },
                   steps: [
-                    { range: [0,140], color: "fc0f03" },
-                    { range: [140, 5000], color: "FFBF00" }
+                    { range: [0,140], color: "b01313" },
+                    { range: [140, 5000], color: "fafa25" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -145,9 +138,9 @@ export default class App extends Component {
                     value: allData[city]["TPR"][allData[city]["TPR"].length -14],  //input from json "dailytestpositivityrate" from -14 days
                   },
                   steps: [
-                    { range: [0, 5], color: "FFBF00" },
-                    { range: [5, 10], color: "e38109" },
-                    { range: [10, 100], color: "fc0f03" }
+                    { range: [0, 5], color: "fafa25" },
+                    { range: [5, 10], color: "fa9325" },
+                    { range: [10, 100], color: "b01313" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -170,9 +163,9 @@ export default class App extends Component {
                     value: allData[city]["rate_increase_new_cases"][allData[city]["rate_increase_new_cases"].length -14] //input from json "casegrowthrate" from -14 days
                   },
                   steps: [
-                    { range: [-50, 2], color: "FFBF00" },
-                    { range: [2, 5], color: "e38109" },
-                    { range: [5, 100], color: "fc0f03" }
+                    { range: [-50, 2], color: "fafa25" },
+                    { range: [2, 5], color: "fa9325" },
+                    { range: [5, 100], color: "b01313" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -196,9 +189,9 @@ export default class App extends Component {
                     value: allData[city]["daily_cases_per_million"][allData[city]["daily_cases_per_million"].length -14] //input from json "dailycasespermillion" from -14 days
                   },
                   steps: [
-                    { range: [0, 20], color: "FFBF00" },
-                    { range: [20, 100], color: "e38109" },
-                    { range: [100, 2000], color: "fc0f03" }
+                    { range: [0, 20], color: "fafa25" },
+                    { range: [20, 100], color: "fa9325" },
+                    { range: [100, 2000], color: "b01313" }
                   ],
                   bar: { color: "1f1f2e" }
                 }
@@ -226,10 +219,10 @@ export default class App extends Component {
             const colorscaleValue = [
               [0, 'rgb(255, 77, 77)'],
               [0.33, 'rgb(255, 77, 77)'],
-              [0.33, '#e38109'],
-              [0.67, '#e38109'],
-              [0.67, '#f2705c'],
-              [1, '#f2705c']
+              [0.33, '#fa9325'],
+              [0.67, '#fa9325'],
+              [0.67, '#fafa25'],
+              [1, '#fafa25']
             ];
             const mapData = [
               {
@@ -285,9 +278,10 @@ export default class App extends Component {
         const policies = this.state.cardsData;
         let selectedCategory = this.state.categoryToday && this.state.categoryToday.toLowerCase().charAt(0).toUpperCase() + this.state.categoryToday.toLowerCase().slice(1);
         const medicalPreparedness = policies.filter((p) => p.Domain === "Medical Preparedness");
+        console.log(medicalPreparedness);
         let medicalPreparednessText = "";
         medicalPreparedness.forEach((i) => {
-            if(i[selectedCategory] === "1") {
+            if(i[selectedCategory] === 1) {
                 medicalPreparednessText += "- ";
                 medicalPreparednessText += i.Policy;
                 medicalPreparednessText += "\n";
@@ -297,7 +291,7 @@ export default class App extends Component {
         const mobility = policies.filter((p) => p.Domain === "Mobility");
         let mobilityText = "";
         mobility.forEach((i) => {
-            if(i[selectedCategory] === "1") {
+            if(i[selectedCategory] === 1) {
                 mobilityText += "- ";
                 mobilityText += i.Policy;
                 mobilityText += "\n";
@@ -306,7 +300,7 @@ export default class App extends Component {
         const testing = policies.filter((p) => p.Domain === "Testing");
         let testingText = "";
                 testing.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         testingText += "- ";
                         testingText += i.Policy;
                         testingText += "\n";
@@ -315,7 +309,7 @@ export default class App extends Component {
         const closures = policies.filter((p) => p.Domain === "Closures");
         let closuresText = "";
                 closures.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         closuresText += "- ";
                         closuresText += i.Policy;
                         closuresText += "\n";
@@ -324,7 +318,7 @@ export default class App extends Component {
         const contactTracing = policies.filter((p) => p.Domain === "Contact Tracing");
         let contactTracingText = "";
                 contactTracing.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         contactTracingText += "- ";
                         contactTracingText += i.Policy;
                         contactTracingText += "\n";
@@ -333,7 +327,7 @@ export default class App extends Component {
         const communication = policies.filter((p) => p.Domain === "Communication");
         let communicationText = "";
                 communication.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         communicationText += "- ";
                         communicationText += i.Policy;
                         communicationText += "\n";
@@ -342,7 +336,7 @@ export default class App extends Component {
         const data = policies.filter((p) => p.Domain === "Data");
         let dataText = "";
                 data.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         dataText += "- ";
                         dataText += i.Policy;
                         dataText += "\n";
@@ -351,7 +345,7 @@ export default class App extends Component {
         const publicLeadership = policies.filter((p) => p.Domain === "Public Leadership");
         let publicLeadershipText = "";
                 publicLeadership.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         publicLeadershipText += "- ";
                         publicLeadershipText += i.Policy;
                         publicLeadershipText += "\n";
@@ -360,7 +354,7 @@ export default class App extends Component {
         const vaccinations = policies.filter((p) => p.Domain === "Vaccinations");
         let vaccinationsText = "";
                 vaccinations.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         vaccinationsText += "- ";
                         vaccinationsText += i.Policy;
                         vaccinationsText += "\n";
@@ -369,7 +363,7 @@ export default class App extends Component {
         const gatherings = policies.filter((p) => p.Domain === "Gatherings");
         let gatheringsText = "";
                 gatherings.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         gatheringsText += "- ";
                         gatheringsText += i.Policy;
                         gatheringsText += "\n";
@@ -378,7 +372,7 @@ export default class App extends Component {
         const maskVentilation = policies.filter((p) => p.Domain === "Mask Wearing and Ventilation");
         let maskVentilationText = "";
                 maskVentilation.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         maskVentilationText += "- ";
                         maskVentilationText += i.Policy;
                         maskVentilationText += "\n";
@@ -387,7 +381,7 @@ export default class App extends Component {
         const distancing = policies.filter((p) => p.Domain === "Physical Distancing and Hygiene");
         let distancingText = "";
                 distancing.forEach((i) => {
-                    if(i[selectedCategory] === "1") {
+                    if(i[selectedCategory] === 1) {
                         distancingText += "- ";
                         distancingText += i.Policy;
                         distancingText += "\n";
@@ -477,8 +471,8 @@ export default class App extends Component {
                                     </div>
                                     <div className="risk card-body" style={{backgroundColor:
                                         this.state.categoryToday === "RED" ? "rgb(255, 77, 77)" :
-                                        this.state.categoryToday === "YELLOW" ? "#ffbf00" :
-                                        this.state.categoryToday === "ORANGE" ? "#f2705c" : "#eaeaec", fontWeight: "bold", textAlign: "center"}}>
+                                        this.state.categoryToday === "YELLOW" ? "#fa9325" :
+                                        this.state.categoryToday === "ORANGE" ? "#fafa25" : "#eaeaec", fontWeight: "bold", textAlign: "center"}}>
                                         <span className="risk-text">{this.state.categoryToday === "RED" ? "HIGH RISK" :
                                         this.state.categoryToday === "YELLOW" ? "LOW RISK" :
                                         this.state.categoryToday === "ORANGE" ? "MEDIUM RISK" : "INSUFFICIENT DATA TO CATEGORIZE"}</span>
