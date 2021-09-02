@@ -217,8 +217,8 @@ export default class App extends Component {
                 return item.replace("RED", 0);
             });
             const colorscaleValue = [
-              [0, 'rgb(255, 77, 77)'],
-              [0.33, 'rgb(255, 77, 77)'],
+              [0, '#b01313'],
+              [0.33, '#b01313'],
               [0.33, '#fa9325'],
               [0.67, '#fa9325'],
               [0.67, '#fafa25'],
@@ -470,7 +470,7 @@ export default class App extends Component {
                                         <h2 className="lead font-weight-bold">Today's Risk Score</h2>
                                     </div>
                                     <div className="risk card-body" style={{backgroundColor:
-                                        this.state.categoryToday === "RED" ? "rgb(255, 77, 77)" :
+                                        this.state.categoryToday === "RED" ? "#b01313" :
                                         this.state.categoryToday === "YELLOW" ? "#fa9325" :
                                         this.state.categoryToday === "ORANGE" ? "#fafa25" : "#eaeaec", fontWeight: "bold", textAlign: "center"}}>
                                         <span className="risk-text">{this.state.categoryToday === "RED" ? "HIGH RISK" :
