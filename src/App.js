@@ -504,31 +504,21 @@ export default class App extends Component {
                             </div>
                             <div className = "col-md-4">
                                 <div className = "action card">
-                                    <div className = "card-header" style={{backgroundColor: "#d8e2dc"}}>
-                                        <p className = "lead">Closures</p>
+                                    <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
+                                        <p className = "lead">Mask Wearing and Ventilation</p>
                                     </div>
                                     <div className = "card-body">
-                                        {closuresText}
+                                        {maskVentilationText}
                                     </div>
                                 </div>
                             </div>
                             <div className = "col-md-4">
                                 <div className = "action card">
-                                    <div className = "card-header" style={{backgroundColor: "#d8e2dc"}}>
-                                        <p className = "lead">Travel</p>
+                                    <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
+                                        <p className = "lead">Physical Distancing and Hygiene</p>
                                     </div>
                                     <div className = "card-body">
-                                        {mobilityText}
-                                    </div>
-                                </div>
-                            </div>
-                            <div className = "col-md-4">
-                                <div className = "action card">
-                                    <div className = "card-header" style={{backgroundColor: "#fcd5ce"}}>
-                                        <p className = "lead">Medical Preparedness</p>
-                                    </div>
-                                    <div className = "card-body">
-                                        {medicalPreparednessText}
+                                        {distancingText}
                                     </div>
                                 </div>
                             </div>
@@ -564,21 +554,31 @@ export default class App extends Component {
                             </div>
                             <div className = "col-md-4">
                                 <div className = "action card">
-                                    <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
-                                        <p className = "lead">Communication </p>
+                                    <div className = "card-header" style={{backgroundColor: "#fcd5ce"}}>
+                                        <p className = "lead">Medical Preparedness</p>
                                     </div>
                                     <div className = "card-body">
-                                        {communicationText}
+                                        {medicalPreparednessText}
                                     </div>
                                 </div>
                             </div>
                             <div className = "col-md-4">
                                 <div className = "action card">
-                                    <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
-                                        <p className = "lead">Data</p>
+                                    <div className = "card-header" style={{backgroundColor: "#d8e2dc"}}>
+                                        <p className = "lead">Closures</p>
                                     </div>
                                     <div className = "card-body">
-                                        {dataText}
+                                        {closuresText}
+                                    </div>
+                                </div>
+                            </div>
+                            <div className = "col-md-4">
+                                <div className = "action card">
+                                    <div className = "card-header" style={{backgroundColor: "#d8e2dc"}}>
+                                        <p className = "lead">Travel</p>
+                                    </div>
+                                    <div className = "card-body">
+                                        {mobilityText}
                                     </div>
                                 </div>
                             </div>
@@ -595,20 +595,20 @@ export default class App extends Component {
                             <div className = "col-md-4">
                                 <div className = "action card">
                                     <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
-                                        <p className = "lead">Mask Wearing and Ventilation</p>
+                                        <p className = "lead">Communication </p>
                                     </div>
                                     <div className = "card-body">
-                                        {maskVentilationText}
+                                        {communicationText}
                                     </div>
                                 </div>
                             </div>
                             <div className = "col-md-4">
                                 <div className = "action card">
                                     <div className = "card-header" style={{backgroundColor: "#ffd7ba"}}>
-                                        <p className = "lead">Physical Distancing and Hygiene</p>
+                                        <p className = "lead">Data</p>
                                     </div>
                                     <div className = "card-body">
-                                        {distancingText}
+                                        {dataText}
                                     </div>
                                 </div>
                             </div>
