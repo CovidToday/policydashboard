@@ -472,10 +472,10 @@ export default class App extends Component {
                                     <div className="risk card-body" style={{backgroundColor:
                                         this.state.categoryToday === "RED" ? "#b01313" :
                                         this.state.categoryToday === "YELLOW" ? "#fa9325" :
-                                        this.state.categoryToday === "ORANGE" ? "#fafa25" : "#eaeaec", fontWeight: "bold", textAlign: "center"}}>
+                                        this.state.categoryToday === "GREEN" ? "#fafa25" : "#eaeaec", fontWeight: "bold", textAlign: "center"}}>
                                         <span className="risk-text">{this.state.categoryToday === "RED" ? "HIGH RISK" :
                                         this.state.categoryToday === "YELLOW" ? "LOW RISK" :
-                                        this.state.categoryToday === "ORANGE" ? "MEDIUM RISK" : "INSUFFICIENT DATA TO CATEGORIZE"}</span>
+                                        this.state.categoryToday === "GREEN" ? "MEDIUM RISK" : "INSUFFICIENT DATA TO CATEGORIZE"}</span>
                                     </div>
                                 </div>
                                 <div className="d-none d-lg-block last-changed-date">Risk score last changed on {this.state.lastChangeDate}</div>
